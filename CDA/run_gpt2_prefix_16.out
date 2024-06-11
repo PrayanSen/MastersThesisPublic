@@ -1,0 +1,279 @@
+06/03/2024 15:02:43 - WARNING - __main__ - Process rank: -1, device: cpu, n_gpu: 0distributed training: False, 16-bits training: False
+06/03/2024 15:02:43 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=0,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.EPOCH,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=2,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.005,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=checkpoints/gpt2-prefix-tune-16/runs/Jun03_15-02-43_TUMThesis,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=2.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=checkpoints/gpt2-prefix-tune-16,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=4,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=checkpoints/gpt2-prefix-tune-16,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.NO,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+[INFO|configuration_utils.py:648] 2024-06-03 15:02:43,315 >> loading configuration file https://huggingface.co/gpt2/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/fc674cd6907b4c9e933cb42d67662436b89fa9540a1f40d7c919d0109289ad01.7d2e0efa5ca20cef4fb199382111e9d3ad96fd77b849e1d4bed13a66e1336f51
+[INFO|configuration_utils.py:684] 2024-06-03 15:02:43,318 >> Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.17.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[INFO|configuration_utils.py:648] 2024-06-03 15:02:43,726 >> loading configuration file https://huggingface.co/gpt2/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/fc674cd6907b4c9e933cb42d67662436b89fa9540a1f40d7c919d0109289ad01.7d2e0efa5ca20cef4fb199382111e9d3ad96fd77b849e1d4bed13a66e1336f51
+[INFO|configuration_utils.py:684] 2024-06-03 15:02:43,728 >> Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.17.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[INFO|tokenization_utils_base.py:1786] 2024-06-03 15:02:45,118 >> loading file https://huggingface.co/gpt2/resolve/main/vocab.json from cache at /home/ubuntu/.cache/huggingface/transformers/684fe667923972fb57f6b4dcb61a3c92763ad89882f3da5da9866baf14f2d60f.c7ed1f96aac49e745788faa77ba0a26a392643a50bb388b9c04ff469e555241f
+[INFO|tokenization_utils_base.py:1786] 2024-06-03 15:02:45,118 >> loading file https://huggingface.co/gpt2/resolve/main/merges.txt from cache at /home/ubuntu/.cache/huggingface/transformers/c0c761a63004025aeadd530c4c27b860ec4ecbe8a00531233de21d865a402598.5d12962c5ee615a4c803841266e9c3be9a691a924f72d395d3a6c6c81157788b
+[INFO|tokenization_utils_base.py:1786] 2024-06-03 15:02:45,118 >> loading file https://huggingface.co/gpt2/resolve/main/tokenizer.json from cache at /home/ubuntu/.cache/huggingface/transformers/16a2f78023c8dc511294f0c97b5e10fde3ef9889ad6d11ffaa2a00714e73926e.cf2d0ecb83b6df91b3dbb53f1d1e4c311578bfd3aa0e04934215a49bf9898df0
+[INFO|tokenization_utils_base.py:1786] 2024-06-03 15:02:45,118 >> loading file https://huggingface.co/gpt2/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2024-06-03 15:02:45,118 >> loading file https://huggingface.co/gpt2/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2024-06-03 15:02:45,118 >> loading file https://huggingface.co/gpt2/resolve/main/tokenizer_config.json from cache at /home/ubuntu/.cache/huggingface/transformers/b105cf342574b32b2f8d5ea86c4845f46d8162160345fd0c85bd9ca3bc5cc48e.67d01b18f2079bd75eac0b2f2e7235768c7f26bd728e7a855a1c5acae01a91a8
+[INFO|configuration_utils.py:648] 2024-06-03 15:02:45,307 >> loading configuration file https://huggingface.co/gpt2/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/fc674cd6907b4c9e933cb42d67662436b89fa9540a1f40d7c919d0109289ad01.7d2e0efa5ca20cef4fb199382111e9d3ad96fd77b849e1d4bed13a66e1336f51
+[INFO|configuration_utils.py:684] 2024-06-03 15:02:45,310 >> Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.17.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[WARNING|logging.py:279] 2024-06-03 15:02:45,499 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|modeling_utils.py:1431] 2024-06-03 15:02:45,697 >> loading weights file https://huggingface.co/gpt2/resolve/main/pytorch_model.bin from cache at /home/ubuntu/.cache/huggingface/transformers/752929ace039baa8ef70fe21cdf9ab9445773d20e733cf693d667982e210837e.323c769945a351daa25546176f8208b3004b6f563438a7603e7932bae9025925
+[INFO|modeling_utils.py:1702] 2024-06-03 15:02:57,291 >> All model checkpoint weights were used when initializing GPT2PrefixTuningLMHeadModel.
+
+[WARNING|modeling_utils.py:1704] 2024-06-03 15:02:57,294 >> Some weights of GPT2PrefixTuningLMHeadModel were not initialized from the model checkpoint at gpt2 and are newly initialized: ['prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+tunable_param is 294912, frozen_param is 124439808
+Using saved cda dataset from: data/wikipedia-10-gender-1008-linebyline
+sampled train_dataset size: 468102 (20.0% of the augmented dataset)
+[INFO|trainer.py:570] 2024-06-03 15:03:46,080 >> The following columns in the training set  don't have a corresponding argument in `GPT2PrefixTuningLMHeadModel.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `GPT2PrefixTuningLMHeadModel.forward`,  you can safely ignore this message.
+/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1254] 2024-06-03 15:03:47,193 >> ***** Running training *****
+[INFO|trainer.py:1255] 2024-06-03 15:03:47,193 >>   Num examples = 468102
+[INFO|trainer.py:1256] 2024-06-03 15:03:47,193 >>   Num Epochs = 2
+[INFO|trainer.py:1257] 2024-06-03 15:03:47,193 >>   Instantaneous batch size per device = 4
+[INFO|trainer.py:1258] 2024-06-03 15:03:47,193 >>   Total train batch size (w. parallel, distributed & accumulation) = 8
+[INFO|trainer.py:1259] 2024-06-03 15:03:47,193 >>   Gradient Accumulation steps = 2
+[INFO|trainer.py:1260] 2024-06-03 15:03:47,193 >>   Total optimization steps = 117026
+  0%|          | 0/117026 [00:00<?, ?it/s]  0%|          | 1/117026 [00:35<1163:59:00, 35.81s/it]  0%|          | 2/117026 [00:55<859:34:54, 26.44s/it]   0%|          | 3/117026 [01:08<661:33:16, 20.35s/it]  0%|          | 4/117026 [01:29<661:37:05, 20.35s/it]  0%|          | 5/117026 [01:53<703:21:44, 21.64s/it]  0%|          | 6/117026 [02:02<567:37:52, 17.46s/it]  0%|          | 7/117026 [02:32<706:07:38, 21.72s/it]  0%|          | 8/117026 [03:04<804:22:34, 24.75s/it]  0%|          | 9/117026 [03:17<687:12:39, 21.14s/it]  0%|          | 10/117026 [03:36<664:11:18, 20.43s/it]  0%|          | 11/117026 [04:01<709:49:09, 21.84s/it]  0%|          | 12/117026 [04:49<967:56:14, 29.78s/it]  0%|          | 13/117026 [05:06<846:47:33, 26.05s/it]  0%|          | 14/117026 [05:26<788:06:55, 24.25s/it]  0%|          | 15/117026 [05:39<679:44:54, 20.91s/it]  0%|          | 16/117026 [05:50<583:29:44, 17.95s/it]  0%|          | 17/117026 [06:25<743:19:06, 22.87s/it]  0%|          | 18/117026 [07:06<925:49:12, 28.48s/it]  0%|          | 19/117026 [07:29<872:42:01, 26.85s/it]  0%|          | 20/117026 [07:42<732:15:36, 22.53s/it]  0%|          | 21/117026 [07:50<593:06:39, 18.25s/it]  0%|          | 22/117026 [08:34<845:08:35, 26.00s/it]  0%|          | 23/117026 [08:45<692:42:31, 21.31s/it]  0%|          | 24/117026 [09:06<697:47:53, 21.47s/it]  0%|          | 25/117026 [09:37<782:23:18, 24.07s/it]  0%|          | 26/117026 [09:48<656:30:06, 20.20s/it]  0%|          | 27/117026 [09:59<567:11:21, 17.45s/it]  0%|          | 28/117026 [10:11<514:38:42, 15.84s/it]  0%|          | 29/117026 [10:24<490:20:32, 15.09s/it]  0%|          | 30/117026 [10:43<526:48:23, 16.21s/it]  0%|          | 31/117026 [10:50<437:46:11, 13.47s/it]  0%|          | 32/117026 [11:31<705:28:51, 21.71s/it]  0%|          | 33/117026 [11:44<616:07:18, 18.96s/it]  0%|          | 34/117026 [12:02<613:00:47, 18.86s/it]  0%|          | 35/117026 [12:14<543:48:13, 16.73s/it]  0%|          | 36/117026 [12:34<572:20:50, 17.61s/it]  0%|          | 37/117026 [12:47<527:45:37, 16.24s/it]  0%|          | 38/117026 [12:54<436:59:01, 13.45s/it]  0%|          | 39/117026 [14:05<999:02:37, 30.74s/it]  0%|          | 40/117026 [14:18<827:21:12, 25.46s/it]  0%|          | 41/117026 [14:28<680:25:06, 20.94s/it]  0%|          | 42/117026 [14:52<707:32:32, 21.77s/it]  0%|          | 43/117026 [15:08<652:11:39, 20.07s/it]  0%|          | 44/117026 [15:21<578:53:58, 17.82s/it]  0%|          | 45/117026 [16:00<786:41:27, 24.21s/it]  0%|          | 46/117026 [16:22<765:58:16, 23.57s/it]  0%|          | 47/117026 [16:48<792:50:30, 24.40s/it]  0%|          | 48/117026 [17:13<795:53:17, 24.49s/it]  0%|          | 49/117026 [17:40<821:18:01, 25.28s/it]  0%|          | 50/117026 [18:02<788:15:39, 24.26s/it]  0%|          | 51/117026 [18:23<753:43:15, 23.20s/it]  0%|          | 52/117026 [18:42<720:52:58, 22.19s/it]  0%|          | 53/117026 [19:44<1106:59:34, 34.07s/it]  0%|          | 54/117026 [20:10<1022:42:00, 31.48s/it]  0%|          | 55/117026 [20:20<819:59:26, 25.24s/it]   0%|          | 56/117026 [20:37<733:18:35, 22.57s/it]  0%|          | 57/117026 [20:50<643:52:38, 19.82s/it]  0%|          | 58/117026 [21:25<788:17:53, 24.26s/it]  0%|          | 59/117026 [21:58<872:11:34, 26.84s/it]  0%|          | 60/117026 [22:20<829:02:28, 25.52s/it]  0%|          | 61/117026 [22:37<746:59:17, 22.99s/it]  0%|          | 62/117026 [22:55<699:54:09, 21.54s/it]  0%|          | 63/117026 [23:10<629:25:56, 19.37s/it]  0%|          | 64/117026 [23:38<719:33:12, 22.15s/it]  0%|          | 65/117026 [24:09<807:02:35, 24.84s/it]  0%|          | 66/117026 [24:24<703:55:52, 21.67s/it]  0%|          | 67/117026 [24:49<739:52:47, 22.77s/it]  0%|          | 68/117026 [24:57<601:44:14, 18.52s/it]  0%|          | 69/117026 [25:06<507:50:32, 15.63s/it]  0%|          | 70/117026 [25:14<433:22:56, 13.34s/it]  0%|          | 71/117026 [25:27<425:08:06, 13.09s/it]  0%|          | 72/117026 [25:43<453:17:41, 13.95s/it]  0%|          | 73/117026 [26:16<644:37:03, 19.84s/it]  0%|          | 74/117026 [26:49<764:04:12, 23.52s/it]  0%|          | 75/117026 [27:12<762:30:29, 23.47s/it]  0%|          | 76/117026 [27:20<615:01:25, 18.93s/it]  0%|          | 77/117026 [27:41<632:23:16, 19.47s/it]  0%|          | 78/117026 [27:56<588:33:10, 18.12s/it]  0%|          | 79/117026 [28:13<574:17:08, 17.68s/it]  0%|          | 80/117026 [28:27<543:05:04, 16.72s/it]  0%|          | 81/117026 [28:41<512:09:50, 15.77s/it]  0%|          | 82/117026 [28:49<436:24:45, 13.43s/it]  0%|          | 83/117026 [29:06<478:32:05, 14.73s/it]  0%|          | 84/117026 [29:17<438:13:56, 13.49s/it]  0%|          | 85/117026 [29:29<424:48:19, 13.08s/it]  0%|          | 86/117026 [29:46<461:42:38, 14.21s/it]  0%|          | 87/117026 [30:12<576:21:30, 17.74s/it]  0%|          | 88/117026 [30:22<502:57:46, 15.48s/it]  0%|          | 89/117026 [30:34<465:59:54, 14.35s/it]  0%|          | 90/117026 [31:03<614:13:08, 18.91s/it]  0%|          | 91/117026 [31:11<507:11:30, 15.61s/it]  0%|          | 92/117026 [31:25<491:40:54, 15.14s/it]  0%|          | 93/117026 [31:37<459:58:21, 14.16s/it]  0%|          | 94/117026 [32:12<660:22:33, 20.33s/it]  0%|          | 95/117026 [32:25<588:09:58, 18.11s/it]  0%|          | 96/117026 [32:36<521:59:33, 16.07s/it]  0%|          | 97/117026 [32:59<584:03:34, 17.98s/it]  0%|          | 98/117026 [33:09<508:56:52, 15.67s/it]  0%|          | 99/117026 [33:17<433:31:14, 13.35s/it]  0%|          | 100/117026 [33:27<398:23:16, 12.27s/it]  0%|          | 101/117026 [33:40<406:07:33, 12.50s/it]  0%|          | 102/117026 [34:21<684:10:59, 21.07s/it]  0%|          | 103/117026 [34:37<641:52:19, 19.76s/it]  0%|          | 104/117026 [34:49<566:32:18, 17.44s/it]  0%|          | 105/117026 [34:57<475:05:32, 14.63s/it]  0%|          | 106/117026 [35:07<424:51:52, 13.08s/it]  0%|          | 107/117026 [35:25<477:23:21, 14.70s/it]  0%|          | 108/117026 [35:35<432:28:27, 13.32s/it]  0%|          | 109/117026 [35:42<371:00:49, 11.42s/it]  0%|          | 110/117026 [35:54<373:13:18, 11.49s/it]  0%|          | 111/117026 [36:06<372:20:38, 11.47s/it]  0%|          | 112/117026 [36:21<413:53:20, 12.74s/it]  0%|          | 113/117026 [36:29<367:46:48, 11.32s/it]  0%|          | 114/117026 [36:39<356:21:04, 10.97s/it]  0%|          | 115/117026 [37:02<469:44:04, 14.46s/it]  0%|          | 116/117026 [37:11<412:27:53, 12.70s/it]  0%|          | 117/117026 [37:20<382:43:33, 11.79s/it]  0%|          | 118/117026 [37:27<329:25:21, 10.14s/it]  0%|          | 119/117026 [37:46<418:17:00, 12.88s/it]  0%|          | 120/117026 [37:58<414:13:07, 12.76s/it]  0%|          | 121/117026 [38:05<355:10:36, 10.94s/it]  0%|          | 122/117026 [38:20<397:49:14, 12.25s/it]  0%|          | 123/117026 [38:34<411:03:06, 12.66s/it]  0%|          | 124/117026 [39:01<552:22:25, 17.01s/it]  0%|          | 125/117026 [39:12<493:25:40, 15.20s/it]  0%|          | 126/117026 [39:24<460:32:38, 14.18s/it]  0%|          | 127/117026 [39:31<391:06:30, 12.04s/it]  0%|          | 128/117026 [39:51<464:32:06, 14.31s/it]  0%|          | 129/117026 [40:09<502:15:01, 15.47s/it]  0%|          | 130/117026 [40:22<483:13:57, 14.88s/it]  0%|          | 131/117026 [40:31<419:29:41, 12.92s/it]  0%|          | 132/117026 [40:41<394:53:43, 12.16s/it]  0%|          | 133/117026 [40:47<335:15:14, 10.32s/it]  0%|          | 134/117026 [41:02<377:58:10, 11.64s/it]  0%|          | 135/117026 [41:18<421:01:05, 12.97s/it]  0%|          | 136/117026 [41:28<396:51:34, 12.22s/it]  0%|          | 137/117026 [42:03<612:48:12, 18.87s/it]  0%|          | 138/117026 [42:17<571:42:47, 17.61s/it]  0%|          | 139/117026 [42:25<475:16:59, 14.64s/it]  0%|          | 140/117026 [42:41<485:13:05, 14.94s/it]  0%|          | 141/117026 [42:59<522:09:26, 16.08s/it]  0%|          | 142/117026 [43:09<457:10:55, 14.08s/it]  0%|          | 143/117026 [43:22<447:26:30, 13.78s/it]  0%|          | 144/117026 [43:34<433:25:07, 13.35s/it]  0%|          | 145/117026 [44:14<695:19:49, 21.42s/it]  0%|          | 146/117026 [44:28<618:23:43, 19.05s/it]  0%|          | 147/117026 [44:39<544:30:07, 16.77s/it]  0%|          | 148/117026 [44:48<465:53:28, 14.35s/it]  0%|          | 149/117026 [44:53<373:37:10, 11.51s/it]  0%|          | 150/117026 [45:02<352:22:03, 10.85s/it]  0%|          | 151/117026 [45:45<660:46:52, 20.35s/it]  0%|          | 152/117026 [46:15<758:03:34, 23.35s/it]  0%|          | 153/117026 [46:59<961:30:20, 29.62s/it]  0%|          | 154/117026 [47:18<857:25:01, 26.41s/it]  0%|          | 155/117026 [47:44<849:37:43, 26.17s/it]  0%|          | 156/117026 [47:53<687:11:36, 21.17s/it]  0%|          | 157/117026 [48:04<586:32:57, 18.07s/it]  0%|          | 158/117026 [48:21<568:56:46, 17.53s/it]  0%|          | 159/117026 [48:48<661:29:45, 20.38s/it]  0%|          | 160/117026 [48:58<562:20:07, 17.32s/it]  0%|          | 161/117026 [49:09<501:49:01, 15.46s/it]  0%|          | 162/117026 [49:17<428:50:44, 13.21s/it]  0%|          | 163/117026 [49:25<382:05:27, 11.77s/it]  0%|          | 164/117026 [50:01<613:51:44, 18.91s/it]  0%|          | 165/117026 [50:10<516:24:37, 15.91s/it]  0%|          | 166/117026 [50:17<427:17:49, 13.16s/it]  0%|          | 167/117026 [50:27<397:17:25, 12.24s/it]  0%|          | 168/117026 [50:36<365:46:16, 11.27s/it]  0%|          | 169/117026 [50:42<319:24:25,  9.84s/it]  0%|          | 170/117026 [50:47<274:52:04,  8.47s/it]  0%|          | 171/117026 [51:01<320:12:14,  9.86s/it]  0%|          | 172/117026 [51:08<298:08:57,  9.19s/it]  0%|          | 173/117026 [51:18<305:38:56,  9.42s/it]  0%|          | 174/117026 [51:28<306:22:08,  9.44s/it]  0%|          | 175/117026 [51:36<295:47:03,  9.11s/it]  0%|          | 176/117026 [51:45<293:21:16,  9.04s/it]  0%|          | 177/117026 [52:00<357:51:42, 11.03s/it]  0%|          | 178/117026 [52:19<427:48:35, 13.18s/it]  0%|          | 179/117026 [52:48<589:42:36, 18.17s/it]  0%|          | 180/117026 [52:57<499:42:40, 15.40s/it]  0%|          | 181/117026 [53:07<442:35:09, 13.64s/it]  0%|          | 182/117026 [53:28<518:31:25, 15.98s/it]  0%|          | 183/117026 [53:39<468:10:48, 14.42s/it]  0%|          | 184/117026 [53:50<430:54:40, 13.28s/it]  0%|          | 185/117026 [54:01<412:08:48, 12.70s/it]  0%|          | 186/117026 [54:10<377:40:08, 11.64s/it]  0%|          | 187/117026 [54:20<354:51:24, 10.93s/it]  0%|          | 188/117026 [54:42<471:02:24, 14.51s/it]  0%|          | 189/117026 [54:50<401:50:58, 12.38s/it]  0%|          | 190/117026 [55:03<410:15:42, 12.64s/it]  0%|          | 191/117026 [55:16<412:24:07, 12.71s/it]  0%|          | 192/117026 [56:27<980:27:06, 30.21s/it]  0%|          | 193/117026 [56:51<916:43:00, 28.25s/it]  0%|          | 194/117026 [57:20<924:56:56, 28.50s/it]  0%|          | 195/117026 [57:34<790:33:24, 24.36s/it]  0%|          | 196/117026 [57:43<631:58:15, 19.47s/it]  0%|          | 197/117026 [58:03<639:58:55, 19.72s/it]  0%|          | 198/117026 [58:12<533:23:04, 16.44s/it]  0%|          | 199/117026 [58:25<501:40:17, 15.46s/it]  0%|          | 200/117026 [58:37<470:57:29, 14.51s/it]  0%|          | 201/117026 [59:03<582:38:54, 17.95s/it]  0%|          | 202/117026 [59:15<527:24:18, 16.25s/it]  0%|          | 203/117026 [59:46<664:04:55, 20.46s/it]  0%|          | 204/117026 [1:00:12<726:06:38, 22.38s/it]  0%|          | 205/117026 [1:00:28<659:45:14, 20.33s/it]  0%|          | 206/117026 [1:00:38<562:20:17, 17.33s/it]  0%|          | 207/117026 [1:00:48<485:45:23, 14.97s/it]  0%|          | 208/117026 [1:00:59<447:19:15, 13.79s/it]  0%|          | 209/117026 [1:01:06<386:29:55, 11.91s/it]  0%|          | 210/117026 [1:01:16<363:41:07, 11.21s/it]  0%|          | 211/117026 [1:01:24<335:50:45, 10.35s/it]  0%|          | 212/117026 [1:01:35<339:15:16, 10.46s/it]  0%|          | 213/117026 [1:01:43<315:20:03,  9.72s/it]  0%|          | 214/117026 [1:02:06<445:39:43, 13.73s/it]  0%|          | 215/117026 [1:02:14<390:34:49, 12.04s/it]  0%|          | 216/117026 [1:02:28<412:24:43, 12.71s/it]  0%|          | 217/117026 [1:03:14<727:07:35, 22.41s/it]  0%|          | 218/117026 [1:03:27<643:03:28, 19.82s/it]  0%|          | 219/117026 [1:03:47<645:43:25, 19.90s/it]  0%|          | 220/117026 [1:04:05<620:25:49, 19.12s/it]  0%|          | 221/117026 [1:04:18<565:17:40, 17.42s/it]  0%|          | 222/117026 [1:04:37<575:17:59, 17.73s/it]  0%|          | 223/117026 [1:04:51<540:25:45, 16.66s/it]  0%|          | 224/117026 [1:05:04<507:13:45, 15.63s/it]  0%|          | 225/117026 [1:05:17<480:08:27, 14.80s/it]  0%|          | 226/117026 [1:05:27<438:47:35, 13.52s/it]  0%|          | 227/117026 [1:05:41<441:28:16, 13.61s/it]  0%|          | 228/117026 [1:06:15<641:44:10, 19.78s/it]  0%|          | 229/117026 [1:06:30<591:16:40, 18.22s/it]  0%|          | 230/117026 [1:06:41<518:10:14, 15.97s/it]  0%|          | 231/117026 [1:06:49<441:58:52, 13.62s/it]  0%|          | 232/117026 [1:07:35<759:35:24, 23.41s/it]  0%|          | 233/117026 [1:08:05<821:23:05, 25.32s/it]  0%|          | 234/117026 [1:08:23<756:15:48, 23.31s/it]  0%|          | 235/117026 [1:08:39<680:17:13, 20.97s/it]  0%|          | 236/117026 [1:09:07<752:53:52, 23.21s/it]  0%|          | 237/117026 [1:09:23<683:43:25, 21.08s/it]  0%|          | 238/117026 [1:09:34<580:25:18, 17.89s/it]  0%|          | 239/117026 [1:09:46<526:57:23, 16.24s/it]  0%|          | 240/117026 [1:10:15<650:27:47, 20.05s/it]  0%|          | 241/117026 [1:10:44<737:08:57, 22.72s/it]  0%|          | 242/117026 [1:11:34<997:08:22, 30.74s/it]  0%|          | 243/117026 [1:12:19<1134:59:56, 34.99s/it]  0%|          | 244/117026 [1:12:34<943:06:55, 29.07s/it]   0%|          | 245/117026 [1:12:49<809:10:57, 24.94s/it]  0%|          | 246/117026 [1:13:00<668:44:45, 20.62s/it]  0%|          | 247/117026 [1:13:11<574:02:01, 17.70s/it]  0%|          | 248/117026 [1:13:22<509:25:12, 15.70s/it]  0%|          | 249/117026 [1:13:31<451:26:36, 13.92s/it]  0%|          | 250/117026 [1:13:47<463:09:25, 14.28s/it]  0%|          | 251/117026 [1:14:20<647:23:40, 19.96s/it]  0%|          | 252/117026 [1:14:31<564:01:14, 17.39s/it]  0%|          | 253/117026 [1:15:12<791:48:36, 24.41s/it]  0%|          | 254/117026 [1:15:30<725:48:30, 22.38s/it]  0%|          | 255/117026 [1:15:54<747:48:50, 23.05s/it]  0%|          | 256/117026 [1:16:08<656:35:46, 20.24s/it]  0%|          | 257/117026 [1:16:50<873:54:32, 26.94s/it]  0%|          | 258/117026 [1:17:07<776:11:36, 23.93s/it]  0%|          | 259/117026 [1:17:36<824:27:03, 25.42s/it]  0%|          | 260/117026 [1:17:50<714:13:43, 22.02s/it]  0%|          | 261/117026 [1:18:12<709:17:37, 21.87s/it]  0%|          | 262/117026 [1:18:27<640:36:36, 19.75s/it]  0%|          | 263/117026 [1:19:10<866:27:32, 26.71s/it]  0%|          | 264/117026 [1:19:25<757:08:11, 23.34s/it]  0%|          | 265/117026 [1:19:44<715:51:09, 22.07s/it]  0%|          | 266/117026 [1:19:58<635:46:04, 19.60s/it]  0%|          | 267/117026 [1:20:30<751:46:35, 23.18s/it]  0%|          | 268/117026 [1:20:51<733:45:55, 22.62s/it]  0%|          | 269/117026 [1:21:39<981:51:09, 30.27s/it]  0%|          | 270/117026 [1:21:49<788:56:49, 24.33s/it]  0%|          | 271/117026 [1:22:02<672:36:00, 20.74s/it]  0%|          | 272/117026 [1:22:10<546:22:46, 16.85s/it]  0%|          | 273/117026 [1:22:34<617:27:26, 19.04s/it]  0%|          | 274/117026 [1:22:44<535:24:34, 16.51s/it]  0%|          | 275/117026 [1:22:58<504:31:22, 15.56s/it]  0%|          | 276/117026 [1:23:16<530:10:21, 16.35s/it]  0%|          | 277/117026 [1:23:25<458:18:02, 14.13s/it]  0%|          | 278/117026 [1:23:38<453:18:38, 13.98s/it]  0%|          | 279/117026 [1:23:53<457:46:56, 14.12s/it]  0%|          | 280/117026 [1:24:14<521:24:01, 16.08s/it]  0%|          | 281/117026 [1:24:34<567:22:53, 17.50s/it]  0%|          | 282/117026 [1:25:06<702:40:25, 21.67s/it]  0%|          | 283/117026 [1:25:28<703:43:41, 21.70s/it]  0%|          | 284/117026 [1:26:05<860:17:10, 26.53s/it]  0%|          | 285/117026 [1:26:18<725:13:59, 22.36s/it]  0%|          | 286/117026 [1:26:46<776:49:23, 23.96s/it]  0%|          | 287/117026 [1:27:01<690:52:48, 21.31s/it]  0%|          | 288/117026 [1:27:14<612:12:41, 18.88s/it]  0%|          | 289/117026 [1:27:49<767:08:46, 23.66s/it]  0%|          | 290/117026 [1:28:01<659:40:31, 20.34s/it]  0%|          | 291/117026 [1:28:16<604:58:15, 18.66s/it]  0%|          | 292/117026 [1:28:28<538:43:54, 16.61s/it]  0%|          | 293/117026 [1:28:42<517:53:55, 15.97s/it]  0%|          | 294/117026 [1:29:17<695:42:29, 21.46s/it]  0%|          | 295/117026 [1:29:43<739:10:35, 22.80s/it]  0%|          | 296/117026 [1:29:58<671:36:58, 20.71s/it]  0%|          | 297/117026 [1:30:14<624:37:05, 19.26s/it]  0%|          | 298/117026 [1:30:40<682:39:15, 21.05s/it]  0%|          | 299/117026 [1:31:13<804:37:34, 24.82s/it]  0%|          | 300/117026 [1:31:35<779:17:06, 24.03s/it]  0%|          | 301/117026 [1:32:00<781:06:25, 24.09s/it]  0%|          | 302/117026 [1:32:36<897:27:51, 27.68s/it]  0%|          | 303/117026 [1:32:59<859:21:15, 26.50s/it]  0%|          | 304/117026 [1:33:11<713:18:45, 22.00s/it]  0%|          | 305/117026 [1:33:30<684:17:08, 21.11s/it]  0%|          | 306/117026 [1:34:07<839:05:18, 25.88s/it]  0%|          | 307/117026 [1:34:26<774:37:51, 23.89s/it]  0%|          | 308/117026 [1:34:43<703:55:45, 21.71s/it]  0%|          | 309/117026 [1:34:54<605:59:01, 18.69s/it]  0%|          | 310/117026 [1:35:12<591:38:38, 18.25s/it]  0%|          | 311/117026 [1:36:05<929:56:53, 28.68s/it]  0%|          | 312/117026 [1:36:28<876:54:20, 27.05s/it]  0%|          | 313/117026 [1:37:20<1116:41:35, 34.44s/it]  0%|          | 314/117026 [1:38:02<1198:19:51, 36.96s/it]  0%|          | 315/117026 [1:38:50<1296:47:17, 40.00s/it]  0%|          | 316/117026 [1:39:11<1112:04:22, 34.30s/it]  0%|          | 317/117026 [1:39:23<901:32:28, 27.81s/it]   0%|          | 318/117026 [1:39:34<732:41:23, 22.60s/it]  0%|          | 319/117026 [1:39:56<725:43:36, 22.39s/it]  0%|          | 320/117026 [1:40:25<791:57:04, 24.43s/it]  0%|          | 321/117026 [1:40:38<679:28:38, 20.96s/it]  0%|          | 322/117026 [1:40:56<650:34:46, 20.07s/it]  0%|          | 323/117026 [1:41:23<724:58:23, 22.36s/it]  0%|          | 324/117026 [1:41:41<681:50:24, 21.03s/it]  0%|          | 325/117026 [1:42:14<799:32:25, 24.66s/it]  0%|          | 326/117026 [1:42:42<825:39:56, 25.47s/it]  0%|          | 327/117026 [1:42:56<719:21:55, 22.19s/it]  0%|          | 328/117026 [1:43:44<964:45:40, 29.76s/it]  0%|          | 329/117026 [1:44:27<1098:50:49, 33.90s/it]  0%|          | 330/117026 [1:44:53<1020:37:32, 31.49s/it]  0%|          | 331/117026 [1:45:18<952:28:08, 29.38s/it]   0%|          | 332/117026 [1:45:42<902:26:48, 27.84s/it]  0%|          | 333/117026 [1:46:03<839:04:14, 25.89s/it]  0%|          | 334/117026 [1:46:41<954:34:03, 29.45s/it]  0%|          | 335/117026 [1:47:01<860:39:14, 26.55s/it]  0%|          | 336/117026 [1:47:26<849:50:30, 26.22s/it]  0%|          | 337/117026 [1:48:04<962:00:39, 29.68s/it]  0%|          | 338/117026 [1:48:30<924:08:10, 28.51s/it]  0%|          | 339/117026 [1:48:56<902:17:57, 27.84s/it]  0%|          | 340/117026 [1:49:44<1093:45:34, 33.74s/it]  0%|          | 341/117026 [1:49:57<891:57:05, 27.52s/it]   0%|          | 342/117026 [1:50:06<721:04:56, 22.25s/it]  0%|          | 343/117026 [1:50:53<958:07:36, 29.56s/it]  0%|          | 344/117026 [1:51:10<834:14:10, 25.74s/it]  0%|          | 345/117026 [1:51:20<685:15:29, 21.14s/it]  0%|          | 346/117026 [1:51:46<732:56:28, 22.61s/it]  0%|          | 347/117026 [1:52:19<833:18:42, 25.71s/it]  0%|          | 348/117026 [1:52:43<817:21:04, 25.22s/it]  0%|          | 349/117026 [1:53:03<765:32:09, 23.62s/it]  0%|          | 350/117026 [1:53:21<708:40:25, 21.87s/it]  0%|          | 351/117026 [1:54:24<1105:37:29, 34.11s/it]  0%|          | 352/117026 [1:55:57<1678:24:59, 51.79s/it]  0%|          | 353/117026 [1:56:30<1494:06:05, 46.10s/it]  0%|          | 354/117026 [1:56:59<1333:25:46, 41.14s/it]  0%|          | 355/117026 [1:57:13<1066:40:51, 32.91s/it]  0%|          | 356/117026 [1:57:26<870:04:40, 26.85s/it]   0%|          | 357/117026 [1:57:42<772:52:47, 23.85s/it]  0%|          | 358/117026 [1:58:02<727:47:17, 22.46s/it]  0%|          | 359/117026 [1:58:35<838:27:41, 25.87s/it]  0%|          | 360/117026 [1:58:50<731:59:39, 22.59s/it]  0%|          | 361/117026 [1:59:45<1046:43:06, 32.30s/it]  0%|          | 362/117026 [2:00:15<1025:41:51, 31.65s/it]  0%|          | 363/117026 [2:00:39<950:32:23, 29.33s/it]   0%|          | 364/117026 [2:00:52<785:05:08, 24.23s/it]  0%|          | 365/117026 [2:01:18<800:56:22, 24.72s/it]  0%|          | 366/117026 [2:01:48<857:46:48, 26.47s/it]  0%|          | 367/117026 [2:02:03<745:51:59, 23.02s/it]  0%|          | 368/117026 [2:02:20<681:53:14, 21.04s/it]  0%|          | 369/117026 [2:02:44<710:34:04, 21.93s/it]  0%|          | 370/117026 [2:03:03<689:45:56, 21.29s/it]  0%|          | 371/117026 [2:03:56<996:15:16, 30.74s/it]  0%|          | 372/117026 [2:04:18<913:18:14, 28.19s/it]  0%|          | 373/117026 [2:04:31<765:50:18, 23.63s/it]  0%|          | 374/117026 [2:04:51<729:27:36, 22.51s/it]  0%|          | 375/117026 [2:05:07<665:48:59, 20.55s/it]  0%|          | 376/117026 [2:05:24<627:02:21, 19.35s/it]  0%|          | 377/117026 [2:05:36<559:23:06, 17.26s/it]  0%|          | 378/117026 [2:05:54<568:12:17, 17.54s/it]  0%|          | 379/117026 [2:06:40<843:16:59, 26.03s/it]  0%|          | 380/117026 [2:06:58<767:43:57, 23.69s/it]  0%|          | 381/117026 [2:07:17<719:56:17, 22.22s/it]  0%|          | 382/117026 [2:07:53<856:37:29, 26.44s/it]  0%|          | 383/117026 [2:08:07<729:48:11, 22.52s/it]  0%|          | 384/117026 [2:08:22<657:38:06, 20.30s/it]  0%|          | 385/117026 [2:08:42<657:59:13, 20.31s/it]  0%|          | 386/117026 [2:08:53<567:25:10, 17.51s/it]  0%|          | 387/117026 [2:09:15<610:02:10, 18.83s/it]  0%|          | 388/117026 [2:09:27<545:35:10, 16.84s/it]  0%|          | 389/117026 [2:10:15<841:08:22, 25.96s/it]  0%|          | 390/117026 [2:10:40<831:02:49, 25.65s/it]  0%|          | 391/117026 [2:10:51<691:49:27, 21.35s/it]  0%|          | 392/117026 [2:11:19<758:57:49, 23.43s/it]  0%|          | 393/117026 [2:11:40<735:31:22, 22.70s/it]  0%|          | 394/117026 [2:12:03<734:32:45, 22.67s/it]  0%|          | 395/117026 [2:12:46<932:40:17, 28.79s/it]  0%|          | 396/117026 [2:12:57<765:10:16, 23.62s/it]Traceback (most recent call last):
+  File "/home/ubuntu/Documents/masterthesis/CDA/debias.py", line 244, in <module>
+    train_result = trainer.train(resume_from_checkpoint=checkpoint) # TrainOutput object
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1375, in train
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1959, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1991, in compute_loss
+    outputs = model(**inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/Documents/masterthesis/CDA/model/gpt2_clm.py", line 332, in forward
+    transformer_outputs = self.transformer(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/adapters/context.py", line 96, in wrapper_func
+    results = f(self, *args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 905, in forward
+    outputs = block(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 407, in forward
+    attn_outputs = self.attn(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 346, in forward
+    attn_output, attn_weights = self._attn(query, key, value, attention_mask, head_mask)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 224, in _attn
+    attn_weights = self.attn_dropout(attn_weights)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/dropout.py", line 59, in forward
+    return F.dropout(input, self.p, self.training, self.inplace)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/functional.py", line 1295, in dropout
+    return _VF.dropout_(input, p, training) if inplace else _VF.dropout(input, p, training)
+KeyboardInterrupt

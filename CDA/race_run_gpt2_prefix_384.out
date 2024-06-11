@@ -1,0 +1,274 @@
+06/05/2024 01:59:28 - WARNING - __main__ - Process rank: -1, device: cpu, n_gpu: 0distributed training: False, 16-bits training: False
+06/05/2024 01:59:28 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=0,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.EPOCH,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=2,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.005,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=checkpoints/race-gpt2-prefix-tune-384/runs/Jun05_01-59-28_TUMThesis,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=2.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=checkpoints/race-gpt2-prefix-tune-384,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=4,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=checkpoints/race-gpt2-prefix-tune-384,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.NO,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+[INFO|configuration_utils.py:648] 2024-06-05 01:59:28,262 >> loading configuration file https://huggingface.co/gpt2/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/fc674cd6907b4c9e933cb42d67662436b89fa9540a1f40d7c919d0109289ad01.7d2e0efa5ca20cef4fb199382111e9d3ad96fd77b849e1d4bed13a66e1336f51
+[INFO|configuration_utils.py:684] 2024-06-05 01:59:28,264 >> Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.17.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[INFO|configuration_utils.py:648] 2024-06-05 01:59:28,675 >> loading configuration file https://huggingface.co/gpt2/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/fc674cd6907b4c9e933cb42d67662436b89fa9540a1f40d7c919d0109289ad01.7d2e0efa5ca20cef4fb199382111e9d3ad96fd77b849e1d4bed13a66e1336f51
+[INFO|configuration_utils.py:684] 2024-06-05 01:59:28,677 >> Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.17.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:59:30,212 >> loading file https://huggingface.co/gpt2/resolve/main/vocab.json from cache at /home/ubuntu/.cache/huggingface/transformers/684fe667923972fb57f6b4dcb61a3c92763ad89882f3da5da9866baf14f2d60f.c7ed1f96aac49e745788faa77ba0a26a392643a50bb388b9c04ff469e555241f
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:59:30,213 >> loading file https://huggingface.co/gpt2/resolve/main/merges.txt from cache at /home/ubuntu/.cache/huggingface/transformers/c0c761a63004025aeadd530c4c27b860ec4ecbe8a00531233de21d865a402598.5d12962c5ee615a4c803841266e9c3be9a691a924f72d395d3a6c6c81157788b
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:59:30,213 >> loading file https://huggingface.co/gpt2/resolve/main/tokenizer.json from cache at /home/ubuntu/.cache/huggingface/transformers/16a2f78023c8dc511294f0c97b5e10fde3ef9889ad6d11ffaa2a00714e73926e.cf2d0ecb83b6df91b3dbb53f1d1e4c311578bfd3aa0e04934215a49bf9898df0
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:59:30,213 >> loading file https://huggingface.co/gpt2/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:59:30,213 >> loading file https://huggingface.co/gpt2/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:59:30,213 >> loading file https://huggingface.co/gpt2/resolve/main/tokenizer_config.json from cache at /home/ubuntu/.cache/huggingface/transformers/b105cf342574b32b2f8d5ea86c4845f46d8162160345fd0c85bd9ca3bc5cc48e.67d01b18f2079bd75eac0b2f2e7235768c7f26bd728e7a855a1c5acae01a91a8
+[INFO|configuration_utils.py:648] 2024-06-05 01:59:30,414 >> loading configuration file https://huggingface.co/gpt2/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/fc674cd6907b4c9e933cb42d67662436b89fa9540a1f40d7c919d0109289ad01.7d2e0efa5ca20cef4fb199382111e9d3ad96fd77b849e1d4bed13a66e1336f51
+[INFO|configuration_utils.py:684] 2024-06-05 01:59:30,416 >> Model config GPT2Config {
+  "_name_or_path": "gpt2",
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.17.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+[WARNING|logging.py:279] 2024-06-05 01:59:30,588 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|modeling_utils.py:1431] 2024-06-05 01:59:30,890 >> loading weights file https://huggingface.co/gpt2/resolve/main/pytorch_model.bin from cache at /home/ubuntu/.cache/huggingface/transformers/752929ace039baa8ef70fe21cdf9ab9445773d20e733cf693d667982e210837e.323c769945a351daa25546176f8208b3004b6f563438a7603e7932bae9025925
+[INFO|modeling_utils.py:1702] 2024-06-05 01:59:40,917 >> All model checkpoint weights were used when initializing GPT2PrefixTuningLMHeadModel.
+
+[WARNING|modeling_utils.py:1704] 2024-06-05 01:59:40,923 >> Some weights of GPT2PrefixTuningLMHeadModel were not initialized from the model checkpoint at gpt2 and are newly initialized: ['prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+tunable_param is 7077888, frozen_param is 124439808
+Using saved cda dataset from: data/wikipedia-10-race-640-linebyline
+sampled train_dataset size: 24456 (20.0% of the augmented dataset)
+[INFO|trainer.py:570] 2024-06-05 01:59:49,802 >> The following columns in the training set  don't have a corresponding argument in `GPT2PrefixTuningLMHeadModel.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `GPT2PrefixTuningLMHeadModel.forward`,  you can safely ignore this message.
+/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1254] 2024-06-05 01:59:50,440 >> ***** Running training *****
+[INFO|trainer.py:1255] 2024-06-05 01:59:50,440 >>   Num examples = 24456
+[INFO|trainer.py:1256] 2024-06-05 01:59:50,440 >>   Num Epochs = 2
+[INFO|trainer.py:1257] 2024-06-05 01:59:50,440 >>   Instantaneous batch size per device = 4
+[INFO|trainer.py:1258] 2024-06-05 01:59:50,440 >>   Total train batch size (w. parallel, distributed & accumulation) = 8
+[INFO|trainer.py:1259] 2024-06-05 01:59:50,440 >>   Gradient Accumulation steps = 2
+[INFO|trainer.py:1260] 2024-06-05 01:59:50,440 >>   Total optimization steps = 6114
+  0%|          | 0/6114 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/ubuntu/Documents/masterthesis/CDA/debias.py", line 244, in <module>
+    train_result = trainer.train(resume_from_checkpoint=checkpoint) # TrainOutput object
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1375, in train
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1959, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1991, in compute_loss
+    outputs = model(**inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/Documents/masterthesis/CDA/model/gpt2_clm.py", line 332, in forward
+    transformer_outputs = self.transformer(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/adapters/context.py", line 96, in wrapper_func
+    results = f(self, *args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 905, in forward
+    outputs = block(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 407, in forward
+    attn_outputs = self.attn(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 346, in forward
+    attn_output, attn_weights = self._attn(query, key, value, attention_mask, head_mask)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 220, in _attn
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/functional.py", line 1885, in softmax
+    ret = input.softmax(dim)
+KeyboardInterrupt
+  0%|          | 0/6114 [00:21<?, ?it/s]

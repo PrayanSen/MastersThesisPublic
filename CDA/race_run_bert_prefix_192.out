@@ -1,0 +1,242 @@
+06/05/2024 01:58:13 - WARNING - __main__ - Process rank: -1, device: cpu, n_gpu: 0distributed training: False, 16-bits training: False
+06/05/2024 01:58:13 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=0,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.EPOCH,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.005,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=checkpoints/race-bert-prefix-tune-192/runs/Jun05_01-58-13_TUMThesis,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=2.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=checkpoints/race-bert-prefix-tune-192,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=checkpoints/race-bert-prefix-tune-192,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.NO,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+[INFO|configuration_utils.py:648] 2024-06-05 01:58:13,621 >> loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+[INFO|configuration_utils.py:684] 2024-06-05 01:58:13,623 >> Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|configuration_utils.py:648] 2024-06-05 01:58:14,002 >> loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+[INFO|configuration_utils.py:684] 2024-06-05 01:58:14,004 >> Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:58:15,286 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt from cache at /home/ubuntu/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:58:15,286 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json from cache at /home/ubuntu/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:58:15,286 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:58:15,286 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2024-06-05 01:58:15,287 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json from cache at /home/ubuntu/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.76ea01b4b85ac16e2cec55c398cba7a943d89ab21dfdd973f6630a152e4b9aed
+[INFO|configuration_utils.py:648] 2024-06-05 01:58:15,489 >> loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+[INFO|configuration_utils.py:684] 2024-06-05 01:58:15,491 >> Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|modeling_utils.py:1431] 2024-06-05 01:58:15,823 >> loading weights file https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin from cache at /home/ubuntu/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+[WARNING|modeling_utils.py:1693] 2024-06-05 01:58:24,890 >> Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertPrefixTuningForMaskedLM: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertPrefixTuningForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertPrefixTuningForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[WARNING|modeling_utils.py:1704] 2024-06-05 01:58:24,891 >> Some weights of BertPrefixTuningForMaskedLM were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+tunable_param is 3538944, frozen_param is 109514298
+Using saved cda dataset from: data/wikipedia-10-race-320-linebyline
+sampled train_dataset size: 142344 (20.0% of the augmented dataset)
+[INFO|trainer.py:570] 2024-06-05 01:58:39,073 >> The following columns in the training set  don't have a corresponding argument in `BertPrefixTuningForMaskedLM.forward` and have been ignored: special_tokens_mask. If special_tokens_mask are not expected by `BertPrefixTuningForMaskedLM.forward`,  you can safely ignore this message.
+/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1254] 2024-06-05 01:58:39,580 >> ***** Running training *****
+[INFO|trainer.py:1255] 2024-06-05 01:58:39,581 >>   Num examples = 142344
+[INFO|trainer.py:1256] 2024-06-05 01:58:39,581 >>   Num Epochs = 2
+[INFO|trainer.py:1257] 2024-06-05 01:58:39,581 >>   Instantaneous batch size per device = 16
+[INFO|trainer.py:1258] 2024-06-05 01:58:39,581 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1259] 2024-06-05 01:58:39,581 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1260] 2024-06-05 01:58:39,581 >>   Total optimization steps = 17794
+  0%|          | 0/17794 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/ubuntu/Documents/masterthesis/CDA/debias.py", line 244, in <module>
+    train_result = trainer.train(resume_from_checkpoint=checkpoint) # TrainOutput object
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1375, in train
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1959, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/trainer.py", line 1991, in compute_loss
+    outputs = model(**inputs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/Documents/masterthesis/CDA/model/bert_mlm.py", line 276, in forward
+    outputs = self.bert(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/adapters/context.py", line 96, in wrapper_func
+    results = f(self, *args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/bert/modeling_bert.py", line 1022, in forward
+    encoder_outputs = self.encoder(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/bert/modeling_bert.py", line 602, in forward
+    layer_outputs = layer_module(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/bert/modeling_bert.py", line 489, in forward
+    self_attention_outputs = self.attention(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/bert/modeling_bert.py", line 416, in forward
+    self_outputs = self.self(
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/models/bert/modeling_bert.py", line 315, in forward
+    attention_scores = torch.matmul(query_layer, key_layer.transpose(-1, -2))
+KeyboardInterrupt
+  0%|          | 0/17794 [00:35<?, ?it/s]

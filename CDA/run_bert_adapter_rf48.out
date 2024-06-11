@@ -1,0 +1,195 @@
+06/02/2024 14:53:02 - WARNING - __main__ - Process rank: -1, device: cpu, n_gpu: 0distributed training: False, 16-bits training: False
+06/02/2024 14:53:02 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=0,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.EPOCH,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0005,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=checkpoints/bert-adapter-rf48/runs/Jun02_14-53-02_TUMThesis,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=2.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=checkpoints/bert-adapter-rf48,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=16,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=checkpoints/bert-adapter-rf48,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.NO,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+[INFO|configuration_utils.py:648] 2024-06-02 14:53:02,768 >> loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+[INFO|configuration_utils.py:684] 2024-06-02 14:53:02,771 >> Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|configuration_utils.py:648] 2024-06-02 14:53:03,416 >> loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+[INFO|configuration_utils.py:684] 2024-06-02 14:53:03,418 >> Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1786] 2024-06-02 14:53:05,866 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/vocab.txt from cache at /home/ubuntu/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99
+[INFO|tokenization_utils_base.py:1786] 2024-06-02 14:53:05,877 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer.json from cache at /home/ubuntu/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4
+[INFO|tokenization_utils_base.py:1786] 2024-06-02 14:53:05,877 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2024-06-02 14:53:05,877 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:1786] 2024-06-02 14:53:05,877 >> loading file https://huggingface.co/bert-base-uncased/resolve/main/tokenizer_config.json from cache at /home/ubuntu/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.76ea01b4b85ac16e2cec55c398cba7a943d89ab21dfdd973f6630a152e4b9aed
+[INFO|configuration_utils.py:648] 2024-06-02 14:53:06,144 >> loading configuration file https://huggingface.co/bert-base-uncased/resolve/main/config.json from cache at /home/ubuntu/.cache/huggingface/transformers/3c61d016573b14f7f008c02c4e51a366c67ab274726fe2910691e2a761acf43e.37395cee442ab11005bcd270f3c34464dc1704b715b5d7d52b1a461abe3b9e4e
+[INFO|configuration_utils.py:684] 2024-06-02 14:53:06,146 >> Model config BertConfig {
+  "_name_or_path": "bert-base-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.17.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|modeling_utils.py:1431] 2024-06-02 14:53:07,192 >> loading weights file https://huggingface.co/bert-base-uncased/resolve/main/pytorch_model.bin from cache at /home/ubuntu/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f
+[WARNING|modeling_utils.py:1693] 2024-06-02 14:53:17,743 >> Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[INFO|modeling_utils.py:1710] 2024-06-02 14:53:17,745 >> All the weights of BertForMaskedLM were initialized from the model checkpoint at bert-base-uncased.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use BertForMaskedLM for predictions without further training.
+[INFO|configuration.py:616] 2024-06-02 14:53:17,788 >> Adding adapter 'masked_lm'.
+tunable_param is 304320, frozen_param is 109514298
+Using saved cda dataset from: data/wikipedia-10-gender-512-linebyline
+sampled train_dataset size: 580442 (20.0% of the augmented dataset)
+[INFO|trainer.py:227] 2024-06-02 14:53:54,905 >> The following columns in the training set  don't have a corresponding argument in `BertForMaskedLM.forward` and have been ignored: special_tokens_mask.
+/home/ubuntu/envs/CDA_env/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1254] 2024-06-02 14:53:56,326 >> ***** Running training *****
+[INFO|trainer.py:1255] 2024-06-02 14:53:56,326 >>   Num examples = 580442
+[INFO|trainer.py:1256] 2024-06-02 14:53:56,326 >>   Num Epochs = 2
+[INFO|trainer.py:1257] 2024-06-02 14:53:56,326 >>   Instantaneous batch size per device = 16
+[INFO|trainer.py:1258] 2024-06-02 14:53:56,326 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1259] 2024-06-02 14:53:56,326 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1260] 2024-06-02 14:53:56,326 >>   Total optimization steps = 72556
+  0%|          | 0/72556 [00:00<?, ?it/s]  0%|          | 1/72556 [01:08<1377:04:49, 68.33s/it]  0%|          | 2/72556 [01:38<927:19:38, 46.01s/it]   0%|          | 3/72556 [02:05<751:22:44, 37.28s/it]  0%|          | 4/72556 [02:44<760:59:43, 37.76s/it]  0%|          | 5/72556 [03:06<651:32:55, 32.33s/it]  0%|          | 6/72556 [04:22<951:22:02, 47.21s/it]  0%|          | 7/72556 [05:35<1119:55:01, 55.57s/it]  0%|          | 8/72556 [06:03<942:06:53, 46.75s/it]   0%|          | 9/72556 [06:47<924:46:00, 45.89s/it]  0%|          | 10/72556 [07:16<818:14:01, 40.60s/it]  0%|          | 11/72556 [07:49<775:13:46, 38.47s/it]  0%|          | 12/72556 [08:09<658:55:24, 32.70s/it]  0%|          | 13/72556 [09:46<1051:29:19, 52.18s/it]  0%|          | 14/72556 [10:03<839:53:30, 41.68s/it]   0%|          | 15/72556 [10:41<815:51:14, 40.49s/it]  0%|          | 16/72556 [11:28<853:17:42, 42.35s/it]  0%|          | 17/72556 [12:43<1052:54:45, 52.25s/it]  0%|          | 18/72556 [13:31<1024:06:06, 50.83s/it]  0%|          | 19/72556 [14:27<1056:43:30, 52.45s/it]  0%|          | 20/72556 [15:15<1030:16:50, 51.13s/it]  0%|          | 21/72556 [16:47<1275:24:21, 63.30s/it]  0%|          | 22/72556 [17:35<1186:10:20, 58.87s/it]  0%|          | 23/72556 [18:52<1294:47:43, 64.26s/it]  0%|          | 24/72556 [19:48<1242:59:24, 61.69s/it]  0%|          | 25/72556 [20:53<1264:17:43, 62.75s/it]  0%|          | 26/72556 [21:25<1077:12:37, 53.47s/it]  0%|          | 27/72556 [21:54<932:18:05, 46.28s/it]   0%|          | 28/72556 [22:45<960:01:35, 47.65s/it]  0%|          | 29/72556 [24:17<1227:55:25, 60.95s/it]  0%|          | 30/72556 [25:17<1224:02:06, 60.76s/it]  0%|          | 31/72556 [25:55<1084:29:31, 53.83s/it]  0%|          | 32/72556 [27:00<1152:38:44, 57.22s/it]  0%|          | 33/72556 [29:09<1586:38:13, 78.76s/it]  0%|          | 34/72556 [30:13<1496:58:46, 74.31s/it]  0%|          | 35/72556 [30:57<1312:52:32, 65.17s/it]  0%|          | 36/72556 [31:37<1164:00:44, 57.78s/it]  0%|          | 37/72556 [32:18<1058:56:45, 52.57s/it]  0%|          | 38/72556 [32:55<966:50:58, 48.00s/it]   0%|          | 39/72556 [34:01<1076:08:50, 53.42s/it]Killed
